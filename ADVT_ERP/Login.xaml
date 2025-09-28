@@ -1,0 +1,100 @@
+﻿<Window x:Class="ADVT_ERP.Login"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADVT_ERP"
+        mc:Ignorable="d"
+        Title="Login" Height="273" Width="530" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="Resources/sw_icon.ico" WindowStyle="None">
+
+    <Border BorderBrush="#FF7C7C7C" BorderThickness="1">
+
+        <Grid>
+            <Grid.Background>
+                <ImageBrush ImageSource="Resources/loginbg.jpg" Stretch="UniformToFill" Opacity="0.3"/>
+            </Grid.Background>
+            <Image x:Name="imgLogo" Height="74" VerticalAlignment="Top" Source="Resources/sw_icon.ico" Margin="0,8,48,0" HorizontalAlignment="Right" Width="77" OpacityMask="{x:Null}"/>
+            <TextBox x:Name="txtLoginId" Height="40" Margin="174,107,48,0" TextWrapping="Wrap" VerticalAlignment="Top" BorderBrush="#FF75777E" BorderThickness="0,0,0,5" FontSize="16" VerticalContentAlignment="Bottom"/>
+            <PasswordBox x:Name="txtLoginPass" HorizontalAlignment="Left" Margin="174,175,0,0" VerticalAlignment="Top" Width="308" Height="37" BorderBrush="#FF75777E" BorderThickness="0,0,0,5" FontSize="16" VerticalContentAlignment="Bottom" />
+            <Button x:Name="btnClose" Content="Close" Margin="403,223,48,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Padding="10,5" Foreground="#FFF0E5E5" BorderBrush="White" Click="btnClose_Click" Height="33" IsCancel="True">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FFFF0202" Offset="0"/>
+                                    <GradientStop Color="#FFFD6E6E" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FFCD0000" Offset="0"/>
+                                            <GradientStop Color="#FFF04C4C" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
+            </Button>
+            <Label Content="User ID" HorizontalAlignment="Left" Margin="174,85,0,0" VerticalAlignment="Top" Width="107" FontWeight="Bold" Foreground="#FFFF0707"/>
+            <Label Content="Password" HorizontalAlignment="Left" Margin="174,153,0,0" VerticalAlignment="Top" Width="67" FontWeight="Bold" Foreground="Red"/>
+            <Image HorizontalAlignment="Left" Margin="6,90,0,36" Width="163" Source="Resources/secure.jpg"/>
+            <Label x:Name="lblCompanyName" Content="ADVT ERP" HorizontalAlignment="Left" Margin="10,15,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+            <Button x:Name="btnSignIn" Content="Sign In" Margin="317,223,134,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" Padding="10,5" Foreground="#FFF0E5E5" BorderBrush="White" Click="btnSignIn_Click" Height="33" IsDefault="True">
+
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Setter Property="Background">
+                            <Setter.Value>
+                                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                    <GradientStop Color="#FF6FD847" Offset="0"/>
+                                    <GradientStop Color="#FF248300" Offset="1"/>
+                                </LinearGradientBrush>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type Button}">
+                                    <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="1">
+                                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    </Border>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background">
+                                    <Setter.Value>
+                                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                            <GradientStop Color="#FF5BB936" Offset="0"/>
+                                            <GradientStop Color="#FF1F6404" Offset="1"/>
+                                        </LinearGradientBrush>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+
+                </Button.Style>
+            </Button>
+            <Label x:Name="lblWait" Content="Please Wait ......" HorizontalAlignment="Left" Margin="186,228.316,0,0" VerticalAlignment="Top" FontSize="16" Visibility="Hidden"/>
+        </Grid>
+    </Border>
+</Window>

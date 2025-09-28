@@ -1,0 +1,147 @@
+﻿<Window x:Class="ADVT_ERP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ADVT_ERP"
+        mc:Ignorable="d"
+        Title="ERP - ADVT" Height="600" Width="1000" WindowStartupLocation="CenterScreen" WindowState="Maximized">
+    <Grid Background="#FFF0F0F0">
+        <Menu DockPanel.Dock="Top" Margin="0,4,90,0" BorderBrush="Black">
+            <MenuItem Header="_Work Place" FontSize="14">
+                <MenuItem Header="Create Bill" Click="mi_CreateBill_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/cash-register.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Create Receipt" Click="mi_CreateReceipt_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/receipt.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Payment Clearance" Click="mi_PaymentClearance_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/bill_clearance.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Debit Note" Click="mi_DebitNote_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/drnotes.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Credit Note" Click="mi_CreditNote_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/crnotes.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem x:Name="menuMasters" Header="_Masters" FontSize="14"> 
+                <MenuItem x:Name="menuMastersDistrict" Header="District Master" Click="mi_ManageDistrict_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/district.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuMastersLocation" Header="Location Master" Click="mi_ManageLocation_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/location.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuMastersAgency" Header="Agency Master" Click="mi_ManageAgency_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/agency.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuMastersExecutive" Header="Executive Master" Click="mi_ManageExecutive_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/executive.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuOptionMaster" Header="Dr/Cr Note Options" Click="mi_DrCrOptionMaster_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/dbupload.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Reports" FontSize="14">
+                <MenuItem Header="Bill Report" Click="mi_DailyBillReport_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/dailyreport.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Receipt Report" Click="mi_DailyReceiptReport_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/dailyreport.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Month Wise Summary" Click="mi_MonthWiseSummary_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/dailyreport.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Agency Ledger" Click="mi_AgencyLedger_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/dailyreport.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Month Wise Invoice" Click="mi_MonthWiseInvoice_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/dailyreport.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Month Wise Receipt" Click="mi_MonthWiseReceipt_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/dailyreport.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Settings" FontSize="14">
+                <MenuItem x:Name="menuSettingsCompanyProfile" Header="Company Profile" Click="mi_CompanyProfile_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/company-profile.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuManageUsers" Header="Manage Users" Click="mi_ManageUsers_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/users.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuSettingsMore" Header="More Settings" Click="mi_MoreSettings_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/settings.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem x:Name="menuSettingsDataSync" Header="Database Sync" Click="mi_DatabaseSync_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/dbupload.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Help" FontSize="14">
+                <MenuItem Header="About ADVT ERP" Click="mi_AboutADVTERP_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/info.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="User Manual" Click="mi_UserManual_Click">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/user-guide.png" Width="16" Height="16"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+        </Menu>
+        <Button x:Name="btnClosePanel" Content="Close" Margin="0,2,5,0" VerticalAlignment="Top" FontWeight="Bold" Foreground="White" BorderBrush="#FFF00000" Height="25" HorizontalAlignment="Right" Width="75" FontSize="14" Click="btnClosePanel_Click" Visibility="Hidden">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFF50808" Offset="0"/>
+                    <GradientStop Color="#FFF58F8F" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <DockPanel x:Name="ContainerWindow" Margin="0,30,0,0">
+            <DockPanel.Background>
+                <ImageBrush ImageSource="Resources/erp_bg.jpg" Stretch="UniformToFill"/>
+            </DockPanel.Background>
+        </DockPanel>
+        <Rectangle Fill="#FFF4F4F5" Height="2" Stroke="Black" VerticalAlignment="Top" Margin="0,28,2,0"/>
+    </Grid>
+</Window>

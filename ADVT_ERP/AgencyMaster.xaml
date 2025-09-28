@@ -1,0 +1,45 @@
+﻿<UserControl x:Class="ADVT_ERP.AgencyMaster"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ADVT_ERP"
+             mc:Ignorable="d" 
+             d:DesignHeight="570" d:DesignWidth="990" Width="990" Height="570">
+    <Grid Background="#FFF9F9F9">
+        <DataGrid x:Name="grdAgencyList" Margin="10,200,10,4" IsTextSearchEnabled="True" IsReadOnly="True" MouseDoubleClick="grdAgencyList_MouseDoubleClick" ColumnHeaderHeight="25" AlternatingRowBackground="#FFEEEAEA" ColumnWidth="*"/>
+        <Label Content="Agency Name" HorizontalAlignment="Left" Margin="13,87,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnSave" Content="Save" HorizontalAlignment="Left" Margin="731,160,0,0" VerticalAlignment="Top" Width="103" Height="28" Click="btnSave_Click" FontWeight="Bold" TabIndex="15"/>
+        <TextBox x:Name="txtAgencyName" HorizontalAlignment="Left" Height="23" Margin="101,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" TabIndex="5"/>
+        <Label Content="Agency Type" HorizontalAlignment="Left" Margin="764,46,0,0" VerticalAlignment="Top"/>
+        <Label Content="Address" HorizontalAlignment="Left" Margin="478,87,0,0" VerticalAlignment="Top"/>
+        <Label Content="Owner Name" HorizontalAlignment="Left" Margin="16,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="District" HorizontalAlignment="Left" Margin="16,51,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.128,0.538"/>
+        <Label Content="Email ID" HorizontalAlignment="Left" Margin="265,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contact 1" HorizontalAlignment="Left" Margin="475,121,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contact 2" HorizontalAlignment="Left" Margin="733,120,0,0" VerticalAlignment="Top"/>
+        <Label Content="Is Active" HorizontalAlignment="Left" Margin="478,160,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="drpDistrictList" HorizontalAlignment="Left" Margin="101,53,0,0" VerticalAlignment="Top" Width="156" SelectionChanged="drpDistrictList_SelectionChanged" TabIndex="1"/>
+        <RadioButton x:Name="rdoAgencyType_G" Content="Govt" HorizontalAlignment="Left" Margin="849,53,0,0" VerticalAlignment="Top" GroupName="AgencyType" TabIndex="3"/>
+        <RadioButton x:Name="rdoAgencyType_C" Content="Comm" HorizontalAlignment="Left" Margin="904,53,0,0" VerticalAlignment="Top" GroupName="AgencyType" IsChecked="True" TabIndex="4"/>
+        <TextBox x:Name="txtOwnerName" HorizontalAlignment="Left" Height="23" Margin="101,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" TabIndex="7"/>
+        <TextBox x:Name="txtAddress" HorizontalAlignment="Left" Height="23" Margin="536,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="433" TabIndex="6"/>
+        <TextBox x:Name="txtContactNum1" HorizontalAlignment="Left" Height="23" Margin="536,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" TabIndex="9"/>
+        <TextBox x:Name="txtContactNum2" HorizontalAlignment="Left" Height="23" Margin="801,123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="168" TabIndex="10"/>
+        <TextBox x:Name="txtEmailId" HorizontalAlignment="Left" Height="23" Margin="322,124,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="138" TabIndex="8"/>
+        <RadioButton x:Name="rdoIsActive_A" Content="Active" HorizontalAlignment="Left" Margin="552,166,0,0" VerticalAlignment="Top" GroupName="IsActive" IsChecked="True" TabIndex="13"/>
+        <RadioButton x:Name="rdoIsActive_D" Content="Deactive" HorizontalAlignment="Left" Margin="612,166,0,0" VerticalAlignment="Top" GroupName="IsActive" TabIndex="14"/>
+        <Label Content="Manage Agency" HorizontalAlignment="Left" Margin="51,4,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold"/>
+        <Image HorizontalAlignment="Left" Height="36" Margin="10,5,0,0" VerticalAlignment="Top" Width="39" Source="Resources/agency.png"/>
+        <Label Content="Location" HorizontalAlignment="Left" Margin="265,54,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="drpLocationList" HorizontalAlignment="Left" Margin="325,54,0,0" VerticalAlignment="Top" Width="135" TabIndex="2"/>
+        <Button x:Name="btnNew" Content="New" HorizontalAlignment="Left" Margin="866,160,0,0" VerticalAlignment="Top" Width="103" Height="28" Click="btnNew_Click" IsEnabled="False" FontWeight="Bold" TabIndex="16"/>
+        <Label Content="GSTN" HorizontalAlignment="Left" Margin="265,159,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtGSTN" HorizontalAlignment="Left" Height="23" Margin="322,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" TabIndex="12"/>
+        <Label Content="PAN" HorizontalAlignment="Left" Margin="16,157,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPAN" HorizontalAlignment="Left" Height="23" Margin="101,157,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="156" TabIndex="11"/>
+        <TextBox x:Name="txtPK_hidden" HorizontalAlignment="Left" Height="23" Margin="917,51,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="41" Visibility="Hidden"/>
+        <Label Content="Comm %" HorizontalAlignment="Left" Margin="475,54,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtCommitionPercent" HorizontalAlignment="Left" Height="23" Margin="536,54,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="174" TabIndex="8"/>
+    </Grid>
+</UserControl>
